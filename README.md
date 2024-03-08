@@ -20,7 +20,7 @@ clear what each endpoint do. For both, you just need to pass a json with the str
 
 
 ## Example
-Let's say we want to encrypt the message "HELLO" with a shift=10. In that case we just need to POST to **encrypt** the following json
+Let's say we want to encrypt the message "ZAPATO" with a shift=10. In that case we just need to POST to **encrypt** the following json
 ```json
 {
     "shift":10,
