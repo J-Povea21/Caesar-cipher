@@ -1,7 +1,7 @@
 # In this module, we will implement the encryption and decryption functions
 
-abecedarium = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
-set_length = len(abecedarium)
+alphabet = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ "
+set_length = len(alphabet)
 
 def encrypt(shift: int, text: str) -> str:
     return __encryptor(shift, text.upper())
@@ -19,9 +19,9 @@ def __encryptor(shift: int, msg: str, decrypt: bool = False) -> str:
     encrypted_text = ''
     try:
         for char in msg:
-            encrypted_index = (abecedarium.index(char) + shift) % set_length
-            encrypted_text += abecedarium[encrypted_index]
+            encrypted_index = (alphabet.index(char) + shift) % set_length
+            encrypted_text += alphabet[encrypted_index]
         
         return encrypted_text
     except ValueError:
-        return "Ups! You inserted a character that we don´t support. Try again!"
+        return "Ups! You inserted a character that we don´t support, try again"
