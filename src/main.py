@@ -8,7 +8,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Hello! This is the Caesar Cipher API :)"}
 
 @app.post("/encrypt")
 async def encrypt_text(msg: Message):
