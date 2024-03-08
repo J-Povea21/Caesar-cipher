@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from schemas.message import Message
+from core.encryptor import encrypt, decrypt
 
 app = FastAPI()
 
@@ -8,11 +10,11 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-@app.post("/encrypt/{message}")
-async def encrypt(message: str):
-    return {"message": "Hello from the API!"}
+@app.post("/encrypt")
+async def encrypt_text(msg: Message):
+    return {"message": encrypt(msg.shift, msg.content)}
 
-@app.post("/decrypt/{message}")
-async def decrypt(message: str):
-    return {"message": "Decrypted message!"}
+@app.post("/decrypt")
+async def decrypt_text(msg: Message):
+    return {"message": decrypt(msg.shift, msg.content)}
 
