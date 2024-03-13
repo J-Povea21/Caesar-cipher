@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from schemas.message import Message
-from core.encryptor import encrypt, decrypt
+from src.schemas.message import Message
+from src.core.encryptor import encrypt, decrypt
 
 app = FastAPI()
 
