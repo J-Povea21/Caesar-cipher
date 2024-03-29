@@ -1,8 +1,15 @@
 from fastapi import FastAPI
 from src.schemas.message import Message
 from src.core.encryptor import encrypt, decrypt
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+)
 
 # Endpoints
 
